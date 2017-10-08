@@ -281,12 +281,13 @@ closeMsg.onclick = ()=>{
 //send message and close message form
 function sendMessage(){
     var messageTa = document.getElementById('messageTa');
-    if(!messageTa.value){
+    if(!messageTa.value || messageTa.value === ''){
         showTooltip('Please Fill Out All Fields', 'Error');
     }else{
         sendMessageForm.classList.add('notShown');
         document.querySelector('body').classList.remove('noScroll');
         showTooltip('Message Sent!', 'Success');
+        messageTa.value = '';
     }
 }
 
