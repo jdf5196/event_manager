@@ -397,6 +397,18 @@ td{
 .message-text{
     width:390px !important;
 }
+.gName{
+    margin-left:-97px;
+}
+.gEmail{
+    margin-left:-93px;
+}
+.gNum{
+    margin-left: -138px;
+}
+.gPrice{
+    margin-left: -92px;
+}
 /* Invited Table */
 
 .Attending{
@@ -407,6 +419,9 @@ td{
 }
 .Recieved{
     color:#81c4d0;
+}
+#invitedList > table > tr > td{
+    width:20%;
 }
 
 /* Tooltip */
@@ -516,6 +531,53 @@ td{
     .form-talabel > span{
         margin-top:-61px;
         margin-left:0px;
+    }
+    .gName, .gNum, .gEmail, .gPrice{
+        margin-left:0px;
+        margin-top:-20px;
+    }
+    .guest-ta-label{
+        margin-top:-61px;
+        margin-left:0px;
+    }
+    .guest-form > .form-row > .form-textarea{
+        width:95%;
+    }
+    .guest-form > .form-row > .form-text{
+        width:95%;
+        margin-bottom:20px;
+    }
+    .guest-form{
+        width:100vw;
+        height:550px;
+    }
+    .guest-form > .add-btn{
+        margin-right:0px;
+        width:100%;
+    }
+    .guest-form > .form-row > .message-text {
+        width:95% !important;
+    }
+    .message-ta-label{
+        margin-left:0px;
+        margin-top:-61px;
+    }
+    #invitedList > table > tr > td{
+        letter-spacing: 0px;
+        font-size:12px;
+    }
+    .shown{
+        margin-left:5%;
+        margin-right:5%;
+    }
+    #theInvited{
+        width:100%;
+    }
+    #tooltip{
+        margin-left:0%;
+        left:0;
+        right:0;
+        top:50px;
     }
 }
 
