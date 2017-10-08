@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='styles/styles.css'>
+    <title>Event Manager</title>
+</head>
+<body>
+    <header>
+        <nav class='navbar'>
+            <div class='container'>
+                <div class='navbar-header'>
+                    <a class='navbar-title'>Event Manager</a>
+                </div>
+                <div class='navbar-nav'>
+                    <ul class='navbar-list'>
+                        <li>Christopher's Event Page</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class='event'>
+        <div class='container'>
+            <div class='event-heading'>
+                <h1>Friday the 13@</h1>
+            </div>
+        </div>
+    </section>
+    <section class='information'>
+        <div id='sideNav' class='sideNav meh'>
+            <div id='friday' class='sideNav-bttn friday-btn'>
+                <p class='friday'>Friday the 13@</p>
+            </div>
+            <div id='eventDiv' class='sideNav-bttn focus'>
+                <p class='sideNav-description'>Event Details</p>
+            </div>
+            <div id='addDiv' class='sideNav-bttn noFocus'>
+                <p id='invite-guest' class='sideNav-description'>Create Invitation</p>
+            </div>
+            <div id='allDiv' class='sideNav-bttn allDiv noFocus'>
+                <p class='sideNav-description'>Guest List</p>
+            </div>
+        </div>
+        <div id='mainDiv' class='mainDiv'>
+            <div id='eventDetails' class='shown'>
+            </div>
+            <div id='inviteDetails' class='notShown'>
+                <div class='invite-div'>
+                    <h2>Create an Email Invitation</h2>
+                    <div class='invite-form'>
+                        <p class='form-row'>
+                            <span class='name abs'>Name of Sender: </span>
+                            <input type='text' class='form-text form-row-name' value='Christopher'></input>
+                        </p>
+                        <p class='form-row'>
+                            <span class='reply abs'>Reply To: </span>
+                            <input type='text' class='form-text form-row-email' value='christopher@email.com'></input>
+                        </p>
+                        <p class='form-row'>
+                            <span class='subject abs'>Subject Line: </span>
+                            <input type='text' class='form-text form-row-subject' value="You are invited to Christopher's Friday the 13th Event! (Oct 13, 2017)"></input>
+                        </p>
+                        <p class='form-row form-talabel'>
+                            <span>Message: </span>
+                            <textarea class='form-textarea form-row-message'>Hope you can make it! &#13;&#10;&#13;&#10;Best, &#13;&#10;&#13;&#10;Christopher</textarea>
+                        </p>
+                    </div>
+                    <div id='addGuestTable' class='add-guest'>
+                        <button id='add-btn' class='add-btn'>
+                            <svg id="addPlus" viewBox="0 0 448 512">
+                                <path d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"></path>
+                            </svg>
+                            <span>Add Guest</span>
+                        </button>
+                        <table id='guestTable' class='guest-table'>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id='invitedList' class='notShown'>
+                <h2 class='attendingTitle'>Attending</h2>
+                <table id='theInvited' class='guest-table'></table>
+                <h2>Recieved Invitation</h2>
+                <table id='recievedList' class='guest-table'></table>
+                <h2>Not Attending</h2>
+                <table id='notAttendingList' class='guest-table'></table>
+            </div>     
+        </div>
+    </section>
+    <section id='add-guest-form' class='add-guest-form notShown'>
+        <div id='guest-form' class='guest-form'>
+            <button id='close-btn' class='close-btn'>X</button>
+            <h2>Add a Guest</h2>
+            <p class='form-row'>
+                <span>Guest Name: </span>
+                <input id='addName' type='text' class='form-text' required></input>
+            </p>
+            <p class='form-row'>
+                <span>Guest Email: </span>
+                <input id='addEmail' type='email' class='form-text' required></input>
+            </p>
+            <p class='form-row'>
+                <span>Number of Guests: </span>
+                <input id='addNum' type='text' class='form-text'></input>
+            </p>
+            <p class='form-row'>
+                <span>Ticket Price: </span>
+                <input id='addPrice' type='text' class='form-text' value='$15'></input>
+            </p>
+            <p class='form-row'>
+                <span class='guest-ta-label'>Personalized Message: </span>
+                <textarea id='addMessage' class='form-textarea'>Hope you can make it! &#13;&#10;Thanks, &#13;&#10;&#13;&#10;Christopher</textarea>
+            </p>
+            <button id='addGuestBtn' class='add-btn guest-btn'>Add Guest</button>
+        </div>
+    </section>
+    <section id='send-message-form' class='add-guest-form notShown'>
+        <div id='message-form' class='guest-form'>
+            <button id='close-msg-btn' class='close-btn'>X</button>
+            <h2>Send a Message</h2>
+            <p class='form-row'>
+                <span>Send To:</span>
+                <input id='messageName' type='text' class='form-text message-text'></input>
+                <input id='messageEmail' type='email' class='form-text message-text'></input>
+            </p>
+            <p class='form-row'>
+                <span>Reply To: </span>
+                <input type='text' class='form-text form-row-email message-text' value='christopher@email.com'></input>
+            </p>
+            <p class='form-row'>
+                <span class='message-ta-label'>Message: </span>
+                <textarea id='messageTa' class='form-textarea form-row-message message-text'></textarea>
+            </p>
+            <button id='sendMsgBtn' class='add-btn guest-btn'>Send Message</button>
+        </div>
+    </section>
+    <div id='tooltip' class='hide'><p id='tooltipText'></p></div>
+    <script src='scripts/data.js'></script>
+    <script src='scripts/scripts.js'></script>
+    <script>
+        function initMap() {
+            var uluru = {lat: 40.454394, lng: -80.010245};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr9CKgBqjG4RW_yac6qaSoa0m_JVcjU6s&callback=initMap"></script>
+</body>
+</html>
